@@ -119,7 +119,9 @@ def getAthletes( ath ):
 	for a in ath:
 		id = a['id']
 		current['athlete'] = id
-		print 'Getting country %(country)s event %(event)s athlete %(athlete)s' % current
+		current['firstName'] = a['firstName']
+		current['lastName'] = a['lastName']
+		print 'Getting country %(country)s event %(event)s athlete %(athlete)s %(firstName)s %(lastName)s' % current
 		json = loadApiJson( 'athlete/%s/info.json' % id )
 		info = json['info']
 		events = {}
